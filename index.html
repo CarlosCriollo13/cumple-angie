@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una Sorpresa Para Angie 💕 | Digital Matrix Reveal</title>
+  <meta name="description" content="Una experiencia digital especial preparada con todo el amor para Angie.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Orbitron:wght@600;800;900&family=Outfit:wght@300;400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Matrix Canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Canvas Overlay Gradient -->
+  <div class="matrix-overlay"></div>
+
+  <!-- Main Countdown Stage -->
+  <main id="countdown-stage" class="stage-active">
+    <div class="countdown-content">
+      <div class="countdown-display-wrapper">
+        <div id="countdown-number" class="pixel-countdown">5</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Space Stage (Hidden until countdown ends) -->
+  <section id="space-stage" class="stage-hidden">
+    <canvas id="space-canvas"></canvas>
+    <div class="space-overlay"></div>
+    <div class="space-content">
+      <div class="birthday-gif-container">
+        <img src="images/Happy Birthday Dancing GIF.gif" alt="Feliz Cumpleaños" class="birthday-gif">
+      </div>
+      <h1 class="space-title">Espero te guste</h1>
+      <div class="space-love-message">
+        <p>Con todo mi amor ❤️</p>
+      </div>
+      <div class="heart-btn-container">
+        <span class="arrow arrow-left">▼</span>
+        <button class="heart-btn" id="heart-btn">
+          <svg viewBox="0 0 32 32" class="heart-svg">
+            <path d="M16 28s-11-7.2-14-12.5C0 10.5 3 5 8.5 5c3.2 0 5.9 1.8 7.5 4.2C17.6 6.8 20.3 5 23.5 5 29 5 32 10.5 30 15.5 27 20.8 16 28 16 28z"/>
+          </svg>
+        </button>
+        <span class="arrow arrow-right">▼</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Stage (Hidden until heart button click) -->
+  <section id="video-stage" class="stage-hidden">
+    <div class="video-container">
+      <video id="surprise-video" src="images/Feliz cumpleaños guapa _3.mp4" muted playsinline></video>
+    </div>
+    <div class="floating-phrases" id="floating-phrases"></div>
+  </section>
+
+  <!-- Birthday Card Stage (Hidden until video ends) -->
+  <section id="card-stage" class="stage-hidden">
+    <div class="floating-hearts" id="floating-hearts"></div>
+    <div class="birthday-card">
+      <div class="card-confetti" id="card-confetti"></div>
+      <div class="card-front">
+        <div class="card-glow"></div>
+        <div class="card-stars">
+          <span class="star" style="top: 10%; left: 15%; animation-delay: 0s;">✨</span>
+          <span class="star" style="top: 15%; right: 20%; animation-delay: 0.5s;">⭐</span>
+          <span class="star" style="top: 25%; left: 8%; animation-delay: 1s;">✨</span>
+          <span class="star" style="top: 20%; right: 10%; animation-delay: 1.5s;">💫</span>
+          <span class="star" style="bottom: 30%; left: 12%; animation-delay: 0.3s;">⭐</span>
+          <span class="star" style="bottom: 25%; right: 15%; animation-delay: 0.8s;">✨</span>
+        </div>
+        <div class="cake-icon">🎂</div>
+        <h2 class="card-title">Feliz Cumpleaños</h2>
+        <div class="card-name">Guapa</div>
+        <div class="card-divider"></div>
+        <textarea id="final-message" class="card-textarea" placeholder="Escribe tu mensaje final aquí..."></textarea>
+        <div class="card-footer">
+          <span class="card-heart">❤️</span>
+          <span class="card-signature">Con todo mi amor</span>
+          <span class="card-heart">❤️</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="matrix.js"></script>
+  <script src="space.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
