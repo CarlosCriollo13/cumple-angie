@@ -81,6 +81,7 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 50;
   flex-direction: column;
   justify-content: center;
@@ -121,6 +122,7 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 10;
   flex-direction: column;
   justify-content: center;
@@ -633,11 +635,13 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 20px;
 }
 
 #space-canvas {
@@ -842,6 +846,7 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 300;
   background: #000;
   display: flex;
@@ -858,6 +863,9 @@ html, body {
 .video-container {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-container video {
@@ -915,13 +923,15 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 400;
   background: #0a0015;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  overflow: hidden;
+  padding: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .card-bg-stars {
@@ -1122,5 +1132,141 @@ html, body {
   }
   50% {
     transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+/* Small phones */
+@media (max-width: 400px) {
+  .card-paper {
+    padding: 30px 20px 25px;
+  }
+
+  .card-body {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .card-body p {
+    text-indent: 15px;
+    margin-bottom: 14px;
+  }
+
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-body .final-phrase {
+    font-size: 1.2rem;
+  }
+
+  .card-seal {
+    font-size: 2rem;
+    bottom: 60px;
+    right: 15px;
+  }
+
+  .space-title {
+    font-size: clamp(3rem, 12vw, 6rem);
+  }
+
+  .space-love-message {
+    font-size: 1.8rem;
+  }
+
+  .heart-btn {
+    width: 65px;
+    height: 65px;
+  }
+
+  .heart-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .birthday-gif {
+    width: clamp(120px, 40vw, 180px);
+  }
+}
+
+/* Tablets and larger phones */
+@media (max-width: 600px) {
+  .card-paper {
+    padding: 35px 25px 30px;
+  }
+
+  .card-body {
+    font-size: 0.95rem;
+  }
+
+  .floating-phrase {
+    font-size: 1rem;
+  }
+
+  .start-heart {
+    font-size: 3rem;
+  }
+
+  .start-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Adjust card seal position on mobile */
+@media (max-height: 700px) {
+  .card-paper {
+    padding: 25px 20px 20px;
+  }
+
+  .card-header {
+    margin-bottom: 15px;
+  }
+
+  .card-body p {
+    margin-bottom: 12px;
+  }
+
+  .card-signature-area {
+    margin-top: 20px;
+  }
+
+  .card-seal {
+    display: none;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  #card-stage {
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+
+  .card-paper {
+    padding: 20px 25px;
+  }
+
+  .card-header {
+    margin-bottom: 10px;
+  }
+
+  .card-body {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .card-body p {
+    margin-bottom: 8px;
+  }
+
+  .card-seal {
+    display: none;
+  }
+
+  .card-signature-area {
+    margin-top: 15px;
   }
 }
