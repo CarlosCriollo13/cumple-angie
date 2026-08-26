@@ -325,42 +325,11 @@ function triggerCardReveal() {
 }
 
 function createConfetti() {
-  const container = document.getElementById('card-confetti');
-  if (!container) return;
-
-  const colors = ['#ff007f', '#ffd700', '#ff80c0', '#ffffff', '#ff2a9d'];
-
-  for (let i = 0; i < 60; i++) {
-    const confetti = document.createElement('div');
-    confetti.className = 'confetti-piece';
-    confetti.style.left = Math.random() * 100 + '%';
-    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-    confetti.style.animationDelay = Math.random() * 3 + 's';
-    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-    confetti.style.width = (Math.random() * 8 + 5) + 'px';
-    confetti.style.height = (Math.random() * 8 + 5) + 'px';
-    container.appendChild(confetti);
-  }
+  // Card is now simpler, no confetti needed
 }
 
 function createFloatingHearts() {
-  const container = document.getElementById('floating-hearts');
-  if (!container) return;
-
-  const hearts = ['💖', '💕', '💗', '💝', '💘', '✨', '⭐'];
-
-  setInterval(() => {
-    const heart = document.createElement('div');
-    heart.className = 'mini-heart';
-    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-    heart.style.left = Math.random() * 100 + '%';
-    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-    heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
-    container.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 6000);
-  }, 500);
+  // Card is now simpler, no floating hearts needed
 }
 
 /* ==========================================
