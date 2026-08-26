@@ -8,8 +8,48 @@ let audioContext = null;
 // Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   setupEventListeners();
-  startCountdownSequence();
 });
+
+function setupEventListeners() {
+  // Start Screen
+  const startStage = document.getElementById('start-stage');
+  if (startStage) {
+    startStage.addEventListener('click', () => {
+      // Initialize audio context on user interaction
+      getAudioContext();
+      
+      // Hide start screen
+      startStage.classList.remove('stage-active');
+      startStage.classList.add('stage-hidden');
+
+      // Show countdown
+      const countdownStage = document.getElementById('countdown-stage');
+      if (countdownStage) {
+        countdownStage.classList.remove('stage-hidden');
+        countdownStage.classList.add('stage-active');
+      }
+
+      startCountdownSequence();
+    });
+  }
+
+  // Skip Countdown
+  const skipBtn = document.getElementById('skip-countdown-btn');
+  if (skipBtn) {
+    skipBtn.addEventListener('click', () => {
+      clearTimeout(stepTimeout);
+      triggerSurpriseReveal();
+    });
+  }
+
+  // Heart Button
+  const heartBtn = document.getElementById('heart-btn');
+  if (heartBtn) {
+    heartBtn.addEventListener('click', () => {
+      triggerVideoReveal();
+    });
+  }
+}
 
 const sequenceSteps = [
   { text: "5", cssClass: "", freq: 440, delay: 1000 },
@@ -168,28 +208,6 @@ function playCelebrationSound() {
       }, idx * 120);
     });
   } catch (e) {}
-}
-
-/* ==========================================
-   Event Listeners & Interactive Controls
-   ========================================== */
-function setupEventListeners() {
-  // Skip Countdown
-  const skipBtn = document.getElementById('skip-countdown-btn');
-  if (skipBtn) {
-    skipBtn.addEventListener('click', () => {
-      clearTimeout(stepTimeout);
-      triggerSurpriseReveal();
-    });
-  }
-
-  // Heart Button
-  const heartBtn = document.getElementById('heart-btn');
-  if (heartBtn) {
-    heartBtn.addEventListener('click', () => {
-      triggerVideoReveal();
-    });
-  }
 }
 
 function triggerVideoReveal() {
